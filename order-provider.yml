@@ -1,0 +1,21 @@
+
+server:
+  port: 8081
+spring:
+  application:
+    name: order-provider
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql:///exam?serverTimezone=UTC
+    username: root
+    password: root
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka,http://localhost:8762/eureka
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.bjsxt.order_resource.pojo
